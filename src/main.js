@@ -18,4 +18,5 @@ sounds.addEventListener("click", (event) => {
   }
 });
 
+//Inicio dos módulos
 FocusTimer.start(0, 0)
