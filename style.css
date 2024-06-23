@@ -1,0 +1,126 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: 0;
+}
+
+button {
+  cursor: pointer;
+  transition: filter .5s;
+}
+
+button:hover {
+  filter: brightness(0.9);
+}
+
+:root {
+  font-size: 62.5%;
+
+  --text-color: #323238;
+  --bg-button-sound: #E1E1E6;
+  --btn-active: #02799D;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+}
+
+#app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 19.2rem;
+  height: 100vh;
+}
+
+.flex {
+  display: flex;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+
+#timer span {
+  font-size: 12.6rem;
+  color: var(--text-color);
+  line-height: normal;
+}
+
+#controls {
+  display: flex;
+  justify-content: space-between;
+  padding-inline: .4rem;
+}
+
+#controls button {
+  background-color: transparent;
+  color: var(--text-color);
+  width: 4.8rem;
+  height: 4.8rem;
+  font-size: 2.4rem;
+  border-radius: 50%;
+  border: 3px solid var(--text-color);
+}
+
+#controls button:hover {
+  transform: scale(1.05);
+}
+
+#sounds {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3.2rem;
+}
+
+#sounds button {
+  border: none;
+  background-color: var(--bg-button-sound);
+  width: 13.8rem;
+  height: 15.2rem;
+  border-radius: 2.4rem;
+}
+
+#sounds button.active img{
+  filter: invert(60%) sepia(100%) saturate(0%) hue-rotate(180deg) brightness(300%) contrast(100%);
+}
+
+.active {
+  background-color: var(--btn-active) !important;
+}
+
+/* controls */
+html:not(.running) .ph-pause,
+html:not(.running) .ph-stop,
+.running .ph-play,
+.running .ph-timer {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  #app {
+    flex-direction: column;
+    gap: 3.2rem;
+  }
+
+  #timer span {
+    font-size: 9rem;
+  }
+
+  #sounds {
+    gap: .8rem;
+  }
+
+  #sounds button {
+    width: 8rem;
+    height: 8rem;
+  }
+
+  #sounds button img {
+    width: 25%;
+    height: 25%;
+  }
+}
